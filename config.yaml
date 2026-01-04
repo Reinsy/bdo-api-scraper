@@ -1,0 +1,30 @@
+browser:
+  headless: true
+  timeout_ms: 25000
+  navigation_wait: "domcontentloaded"  # or "networkidle"
+  concurrency: 3
+  viewport:
+    width: 1280
+    height: 720
+  locale: "en-US"
+  timezone_id: "Europe/London"
+
+headers:
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122 Safari/537.36"
+
+scrape:
+  retries: 8
+  backoff_seconds: 1.2
+  max_backoff_seconds: 10
+
+proxy_layers:
+  - name: "dc"
+    proxies:
+      - "http://user:pass@1.2.3.4:8000"
+      - "http://user:pass@1.2.3.5:8000"
+  - name: "res"
+    proxies:
+      - "http://user:pass@5.6.7.8:9000"
+
+targets:
+  - "https://www.naeu.playblackdesert.com/en-us/Adventure/Profile?profileTarget=tbXSK7e39Sb3U3yPi7UDjqnR25VPRC8y%2fWiVeDyfq2UtPBWU8Tl5iZXYc03xBUO7fhq1ERFmzER7JAMX2WBT5PU0aideC2u%2fwaF%2fe6uv2w7VoBbKAryq6krQNMD%2fkthNy3CJpPQliNGXkyenWscQGNNp0oDx5sBW9OfTkn0Ff%2bw%3d"
